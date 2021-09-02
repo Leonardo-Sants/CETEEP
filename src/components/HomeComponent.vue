@@ -1,9 +1,8 @@
 <template>
-<div>
 
   <header class="cabecalho">
     <div class="logo">
-      <h1 id="nomeLogo">CETEEP <p id="nomeLogo2">Treinamentos</p></h1>
+      <h1 id="nomeLogo">CETEEP <p id="nomeLogo2">Centro Técnico</p></h1>
     </div>
     <div class="nav">
       <ul>
@@ -13,88 +12,45 @@
         <li>Serviços</li>
       </ul>
     </div>
+
+    <div class="menu">
+      <b-button v-b-toggle.sidebar-no-header variant="outline-light"><b-icon icon="menu-button-wide-fill" aria-hidden="true"></b-icon></b-button>
+      <b-sidebar id="sidebar-no-header" aria-labelledby="sidebar-no-header-title" no-header shadow>
+        <template #default="{ hide }">
+          <div class="p-3">
+            <h4 id="sidebar-no-header-title">Custom header sidebar</h4>
+            <ul cla>
+              <li>Home</li>
+              <li>Escola</li>
+              <li>Curso</li>
+              <li>Serviços</li>
+            </ul>
+            <b-button variant="primary" block @click="hide">Close Sidebar</b-button>
+          </div>
+        </template>
+      </b-sidebar>
+    </div>
+
+
   </header>
 
-  <div class="carrossel">
-    <b-carousel
-      id="carousel-1"
-      v-model="slide"
-      :interval="4000"
-      controls
-      indicators
-      background="#ababab"
-      img-width="1024px"
-      img-height="180px"
-      style="text-shadow: 1px 1px 2px #333;"
-      @sliding-start="onSlideStart"
-      @sliding-end="onSlideEnd"
-    >
-
-    <!-- imagem solda -->
-      <b-carousel-slide>
-          <h1 id="carrossel">Soldagem e Corte</h1>
-            <template #img>
-                <img
-                    class="d-block img-fluid w-100"
-                    src= "../assets/imagens/Solda.jpg"
-                    width="1024px"
-                    height="280px"
-                    alt="image slot"
-                >
-            </template>
-      </b-carousel-slide>
-
-    <!-- imagem inspeção -->
-       <b-carousel-slide>
-           <h1 id="carrossel">Inspeção de Qualidade</h1>
-            <template #img>
-                <img
-                    class="d-block img-fluid w-100"
-                    height="1024"
-                    width="230"
-                    src= "../assets/imagens/Inspetor.png"
-                    alt="image slot"
-                >
-            </template>
-      </b-carousel-slide>
-
-    <!-- imagem tecnologia -->
-         <b-carousel-slide>
-             <h1 id="carrossel">Tecnologia</h1>
-            <template #img>
-                <img
-                    class="d-block img-fluid w-100"
-                    src= "../assets/imagens/Tecnologia.jpg"
-                    alt="image slot"
-                >
-            </template>
-      </b-carousel-slide>
-
-    </b-carousel>
-  </div>
-
-</div>
 </template>
 
 <script>
   export default {
       name: 'HomeComponent',
-    data() {
-      return {
-        slide: 0,
-        sliding: null
-      }
-    },
     methods: {
-      onSlideStart(slide) {
-        this.sliding = true
-        return slide
-      },
-      onSlideEnd(slide) {
-        this.sliding = false
-        return slide
-      }
+        openMenu() {
+          let menu = document.querySelector('.menuDrop');
+          menu.style.display = ('block');
+        },
+
+         closeMenu() {
+          let menu = document.querySelector('.menuDrop');
+          menu.style.display = ('none');
+        }
     }
+
   }
 </script>
 
@@ -106,16 +62,6 @@
   box-sizing: border-box;
 }
 
-img {
-  width: 100%;
-  height: 480px;
-}
-
-#carrossel {
-  color: #fff;
-  font-size: 80px;
-  font-weight: 700;
-}
 .cabecalho {
   display: flex;
   width: 100%;
@@ -140,10 +86,8 @@ img {
 }
 
 li:hover {
-  color: rgb(13, 30, 153);
-  cursor: pointer;
-  font-size: 25px;
-  
+  color: black;
+  cursor: pointer;  
 }
 
 .logo {
@@ -155,9 +99,8 @@ li:hover {
   height: 70px;
   border: 3px solid #fff;
   background-color: rgb(33, 33, 242);
-  box-shadow:  5px 5px  1em rgb(87, 86, 86);
+  box-shadow: 3px 3px 3px rgb(87, 86, 86);
   cursor: pointer;
-  position: absolute;
 }
 
 #nomeLogo {
@@ -167,7 +110,29 @@ li:hover {
 }
 
 #nomeLogo2 {
-  font-size: 20px;
+  font-size: 15px;
   color: #fff;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 25px;
+  width: 100%;
+
+}
+
+
+
+
+@media (max-width: 720px) {
+  .nav {
+    display: none;
+  }
+  .menu {
+    display: flex;
+  }
+  
 }
 </style>
