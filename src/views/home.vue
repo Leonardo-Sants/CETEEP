@@ -1,61 +1,55 @@
 <template>
     <main>
-
         <div class="carrossel">
-        <b-carousel
-        id="carousel-1"
-        v-model="slide"
-        :interval="4000"
-        indicators
-        background="#ababab"
-        img-width="1024px"
-        img-height="180px"
-        style="text-shadow: 1px 1px 2px #333;"
-        @sliding-start="onSlideStart"
-        @sliding-end="onSlideEnd"
-        >
+            <b-carousel
+            id="carousel-1"
+            v-model="slide"
+            :interval="3000"
+            indicators
+            background="#fff"
+            img-width="1024px"
+            img-height="480px"
+            @sliding-start="onSlideStart"
+            @sliding-end="onSlideEnd"
+            >
 
-            <!-- imagem solda -->
-            <b-carousel-slide>
-                <h1 id="carrossel">Soldagem e Corte</h1>
+                <!-- imagem solda -->
+                <b-carousel-slide>
+                    <h1 id="carrossel"></h1>
+                        <template #img>
+                            <img
+                                class="d-block img-fluid w-100"
+                                src= "../assets/imagens/imgPauloRick.jpeg"
+                                alt="image slot"
+                            >
+                        </template>
+                </b-carousel-slide>
+
+                <!-- imagem inspeção -->
+                <b-carousel-slide>
+                    <h1 id="carrossel"></h1>
+                        <template #img>
+                            <img
+                                class="d-block img-fluid w-100"
+                                src= "../assets/imagens/imgPauloRick3.jpeg"
+                                alt="image slot"
+                            >
+                        </template>
+                </b-carousel-slide>
+
+                <!-- imagem tecnologia -->
+                <b-carousel-slide>
+                    <h1 id="carrossel">Indústria e Tecnologia</h1>
                     <template #img>
                         <img
                             class="d-block img-fluid w-100"
-                            src= "../assets/imagens/Solda.jpg"
-                            width="1024px"
-                            height="280px"
+                            src= "../assets/imagens/Tecnologia.jpg"
                             alt="image slot"
                         >
                     </template>
-            </b-carousel-slide>
+                </b-carousel-slide>
 
-            <!-- imagem inspeção -->
-            <b-carousel-slide>
-                <h1 id="carrossel">Controle de Qualidade</h1>
-                    <template #img>
-                        <img
-                            class="d-block img-fluid w-100"
-                            height="1024"
-                            width="230"
-                            src= "../assets/imagens/Inspetor.png"
-                            alt="image slot"
-                        >
-                    </template>
-            </b-carousel-slide>
-
-            <!-- imagem tecnologia -->
-            <b-carousel-slide>
-                <h1 id="carrossel">Indústria e Tecnologia</h1>
-                <template #img>
-                    <img
-                        class="d-block img-fluid w-100"
-                        src= "../assets/imagens/Tecnologia.jpg"
-                        alt="image slot"
-                    >
-                </template>
-            </b-carousel-slide>
-
-        </b-carousel>
+            </b-carousel>
         </div>
 
         <section class="sectionLogo">
@@ -88,7 +82,7 @@
                 </div>
                 <div>
                     <img id="imgAjuste" src="../assets/imagens/normas.png" alt="Solda e corte">
-                    <h1 id="imgTitulo">Fomação nas Normas internacionais</h1>
+                    <h1 id="imgTitulo">Normas internacionais</h1>
                 </div>
             </div>
         </section>
@@ -99,32 +93,32 @@
             </div>
             <div class="imgCurso">
                 <div>
-                    <img id="imgAjuste" src="../assets/imagens/Laboratorio.jpg" alt="Solda e corte">
+                    <img id="imgAjuste" src="../assets/imagens/Laboratorio.jpg">
                     <h1 id="imgTitulo">Laboratório</h1>
                     <ul id="imgLista">
-                        <li>Laboratório de ensaios Mecânico     </li>
-                        <li>Laboratório de ensaio de Soldagem   </li>
-                        <li>Laboratório de ensaios de END       </li>
-                        <li>Laboratório de ensaio de Macrografia</li>
+                        <li id="imgLista">Laboratório de ensaios Mecânico     </li>
+                        <li id="imgLista">Laboratório de ensaio de Soldagem   </li>
+                        <li id="imgLista">Laboratório de ensaios de END       </li>
+                        <li id="imgLista">Laboratório de ensaio de Macrografia</li>
                     </ul>
                 </div>
                 <div>
-                    <img id="imgAjuste" src="../assets/imagens/Documentos.jpg" alt="Solda e corte">
+                    <img id="imgAjuste" src="../assets/imagens/Documentos.jpg">
                     <h1 id="imgTitulo">Documentos</h1>
                      <ul id="imgLista">
-                        <li>Laudos e Documentos técnicos</li>
-                        <li>Desenvolvimentos de Procedimentos</li>
-                        <li>Qualificação de Soldadores EPS/RQPS/RQS/IEIS</li>
+                        <li id="imgLista">Laudos e Documentos técnicos</li>
+                        <li id="imgLista">Desenvolvimentos de Procedimentos</li>
+                        <li id="imgLista">Qualificação de Soldadores EPS/RQPS/RQS/IEIS</li>
                     </ul>
                 </div>
                 <div>
                     <img id="imgAjuste" src="../assets/imagens/Auditoria.jpg" alt="Solda e corte">
                     <h1 id="imgTitulo">Auditoria</h1>
                      <ul id="imgLista">
-                        <li>Laboratório de ensaios Mecânico</li>
-                        <li>Laboratório de ensaio de Soldagem</li>
-                        <li>Laboratório de ensaios de END</li>
-                        <li>Laboratório de ensaio de Macrografia</li>
+                        <li id="imgLista">Laboratório de ensaios Mecânico</li>
+                        <li id="imgLista">Laboratório de ensaio de Soldagem</li>
+                        <li id="imgLista">Laboratório de ensaios de END</li>
+                        <li id="imgLista">Laboratório de ensaio de Macrografia</li>
                     </ul>
                 </div>
             </div>
@@ -165,8 +159,9 @@ export default {
 }
 
 img {
+  background-color: #fff;
   width: 100%;
-  height: 480px;
+  height: 570px;
 }
 
 #carrossel {
@@ -190,14 +185,14 @@ section {
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 70px;
+  margin-top: 100px;
 
 }
 
 #nomeLogo {
     display: flex;
     flex-direction: column;
-    align-items: initial;
+    align-items: center;
     padding: 0px 0px 0px 15px;
     font-size: 60px;
     font-weight: 700;
@@ -255,7 +250,7 @@ section {
     display: flex;
     width: 250px;
     height: 250px;
-    margin: 100px 50px 20px 40px;
+    margin: 100px 30px 20px 30px;
     box-shadow:  3px 3px  1em rgb(87, 86, 86);
 }
 
@@ -286,6 +281,80 @@ section {
     justify-content: center;
     font-size: 3em;
     font-weight: 500;
-    
+}
+
+/* Responsivo do Site*/
+
+@media (max-width: 720px){
+    img {
+    width: 100%;
+    height: 280px;
+    }
+
+    #carrossel {
+    color: #fff;
+    font-size: 2em;
+    font-weight: 700;
+    }
+
+    .sectionCurso p {
+        display: flex;
+        justify-content: center;
+        font-size: 1.5em;
+        font-weight: 700;
+    }
+
+    #paragrafoH2 {
+        display: flex;
+        justify-content: center;
+        font-size: 1em;
+        width: 950px;
+        font-weight: 300;
+    }
+    .imgCurso {
+        flex-direction: column;
+    }
+
+    #imgAjuste {
+        display: flex;
+        align-items: center;
+        width: 220px;
+        height: 150px;
+        margin: 50px 40px 20px 20px;
+        box-shadow:  3px 3px  1em rgb(87, 86, 86);
+    }
+
+    .sectionServico {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        margin-top: 600px;
+    }
+
+    .sectionServico p {
+        display: flex;
+        justify-content: center;
+        margin-top: 75px;
+        font-size: 2em;
+        font-weight: 500;
+    }
+
+   #imgTitulo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 250px;
+        font-size: 1em;
+        font-weight: 700;
+    }
+
+    #imgLista {
+        display: flex;
+        align-items: center;
+        font-size: 0.8em;
+        margin: 3px;
+        font-weight: 500;
+        color: rgb(17, 73, 119);
+    }
 }
 </style>

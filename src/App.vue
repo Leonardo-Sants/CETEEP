@@ -1,9 +1,9 @@
 <template>
 
   <div>
-    <HomeComponent></HomeComponent>
-    <Home></Home>
-    <FooterComponent></FooterComponent>
+    <HomeComponent/>
+    <router-view path="$router.key"/>
+    <FooterComponent/>
   </div>
   
 </template>
@@ -12,15 +12,12 @@
 
 import HomeComponent from './components/HomeComponent.vue';
 import FooterComponent from './components/FooterComponent.vue'
-import Home from './views/home.vue'
-
 
 export default {
   name: 'App',
   components: {
   HomeComponent,
-  FooterComponent,
-  Home
+  FooterComponent
   }
 }
 </script>
