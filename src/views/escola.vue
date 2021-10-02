@@ -39,7 +39,7 @@ export default {
     align-items: center;
     width: 100%;
     height: 400px;
-    margin: 20px;
+    margin: 30px;
     font-size: 1.5em;
 }
 
