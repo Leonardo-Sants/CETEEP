@@ -2,14 +2,17 @@
 
   <header class="cabecalho">
     <div class="logo">
-      <h1 id="nomeLogo">CETEEP <p id="nomeLogo2">Centro Técnico</p></h1>
+      <img src="../assets/imagens/Logo.png" alt="">
     </div>
+    <!--<div class="logo">
+      <h1 id="nomeLogo">CETEEP <p id="nomeLogo2">Centro Técnico</p></h1> 
+    </div>-->
     <div class="nav">
       <ul>
           <li><a href="http:/">Home</a></li>
           <li><a href="http:/curso">Curso</a></li>
           <li><a href="http:/escola">Escola</a></li>
-          <li><a href="http:/">Serviços</a></li>
+          <li><a href="http:/servicos">Serviços</a></li>
       </ul>
     </div>
 
@@ -66,8 +69,7 @@
 .cabecalho {
   display: flex;
   width: 100%;
-  height: 80px;
-  background-color: rgb(33, 33, 242,0.5);
+  height: 200px;
   z-index: 3;
   position:absolute;
 }
@@ -97,16 +99,19 @@ li:hover {
   color: black;
   cursor: pointer;  
 }
-
+img {
+  width: 250px;
+  height: 250px;
+  margin-top: 40px;
+}
 .logo {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 5px;
-  margin: 5px 30px;
+  padding: 20px;
+  margin: 20px 30px;
   width: 180px;
   height: 70px;
-  border: 3px solid #fff;
   background-color: rgb(33, 33, 242);
   box-shadow: 3px 3px 3px rgb(87, 86, 86);
   cursor: pointer;

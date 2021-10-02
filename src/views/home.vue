@@ -1,57 +1,8 @@
 <template>
     <main>
-        <div class="carrossel">
-            <b-carousel
-            id="carousel-1"
-            v-model="slide"
-            :interval="3000"
-            indicators
-            background="#fff"
-            img-width="1024px"
-            img-height="480px"
-            @sliding-start="onSlideStart"
-            @sliding-end="onSlideEnd"
-            >
-
-                <!-- imagem solda -->
-                <b-carousel-slide>
-                    <h1 id="carrossel"></h1>
-                        <template #img>
-                            <img
-                                class="d-block img-fluid w-100"
-                                src= "../assets/imagens/imgPauloRick.jpeg"
-                                alt="image slot"
-                            >
-                        </template>
-                </b-carousel-slide>
-
-                <!-- imagem inspeção -->
-                <b-carousel-slide>
-                    <h1 id="carrossel"></h1>
-                        <template #img>
-                            <img
-                                class="d-block img-fluid w-100"
-                                src= "../assets/imagens/imgPauloRick3.jpeg"
-                                alt="image slot"
-                            >
-                        </template>
-                </b-carousel-slide>
-
-                <!-- imagem tecnologia -->
-                <b-carousel-slide>
-                    <h1 id="carrossel">Indústria e Tecnologia</h1>
-                    <template #img>
-                        <img
-                            class="d-block img-fluid w-100"
-                            src= "../assets/imagens/Tecnologia.jpg"
-                            alt="image slot"
-                        >
-                    </template>
-                </b-carousel-slide>
-
-            </b-carousel>
+        <div>
+        <Carrossel/>
         </div>
-
         <section class="sectionLogo">
             <div class="logo">
                 <h1 id="nomeLogo">CETEEP <p id="nomeLogo2">Centro Técnico Especializado Profissionalizante</p></h1>
@@ -128,24 +79,13 @@
 </template>
 
 <script>
+import Carrossel from "../components/CarouselComponent.vue"
 export default {
     name: 'home',
-     data() {
-      return {
-        slide: 0,
-        sliding: null
-      }
-    },
-    methods: {
-      onSlideStart(slide) {
-        this.sliding = true
-        return slide
-      },
-      onSlideEnd(slide) {
-        this.sliding = false
-        return slide
-      }
-    }
+    components:{
+       Carrossel
+    } 
+        
 }
 </script>
 
@@ -358,3 +298,4 @@ section {
     }
 }
 </style>
+
