@@ -8,12 +8,16 @@
       <h1 id="nomeLogo">CETEEP <p id="nomeLogo2">Centro Técnico</p></h1> 
     </div>-->
     <div class="nav">
-      <ul>
+      <router-link to='/'>Home</router-link>
+      <router-link to='/curso'>Curso</router-link>
+      <router-link to='/escola'>Escola</router-link>
+      <router-link to='/servicos'>Servicos</router-link>
+     <!-- <ul>
           <li><a href="http:/">Home</a></li>
           <li><a href="http:/curso">Curso</a></li>
           <li><a href="http:/escola">Escola</a></li>
           <li><a href="http:/servicos">Serviços</a></li>
-      </ul>
+      </ul> -->
     </div>
 
     <!-- Menu responsivo -->
